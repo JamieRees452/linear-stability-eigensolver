@@ -1,12 +1,10 @@
 """
-Find the most unstable eigenvalue and corresponding eigenvectors of the square matrices A and B.
-
 Solve A @ x[i] = c[i] * B @ x[i], the generalised eigenvalue problem for c[i] eigenvalues with 
 corresponding eigenvectors x[i]
 
-Example
--------
-python calculate_evals_evecs_single.py 50 50 6e-6 -0.2 NEMO_25 01 02
+Example Usage
+-------------
+python calculate_evals_evecs_single.py 150 100 6.2e-6 -0.4 NEMO_25
 """
 
 import argparse
@@ -19,7 +17,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('ny'         , type=int  , help='Number of meridional gridpoints')
 parser.add_argument('nz'         , type=int  , help='Number of vertical gridpoints')
 parser.add_argument('k'          , type=float, help='Zonal wavenumber')
-parser.add_argument('init_guess' , type=float, help='intial guess for the eigenvalue')
+parser.add_argument('init_guess' , type=float, help='Initial eigenvalue guess')
 parser.add_argument('case'       , type=str  , help='Cases: NEMO_25, NEMO_12, Proehl_[1-8]')
 args = parser.parse_args()
 
